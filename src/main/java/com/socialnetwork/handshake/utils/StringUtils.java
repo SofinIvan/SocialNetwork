@@ -1,6 +1,6 @@
 package com.socialnetwork.handshake.utils;
 
-public class StringUtils {
+public final class StringUtils {
 
     private StringUtils() {
     }

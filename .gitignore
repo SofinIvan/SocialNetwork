@@ -1,0 +1,8 @@
+desktop.ini
+*.iml
+*.jar
+.idea/
+.mvn/
+out/
+target/
+lib/

@@ -23,16 +23,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.encoding>UTF-8</project.encoding>
         <java.version>1.8</java.version>
-
-        <postgresql.host>localhost</postgresql.host>
-        <postgresql.port>5432</postgresql.port>
-        <postgresql.username>bug_hunter</postgresql.username>
-        <postgresql.password>bug_hunter</postgresql.password>
-
-        <flyway.url>jdbc:postgresql://${postgresql.host}:${postgresql.port}/social_network</flyway.url>
-        <flyway.user>${postgresql.username}</flyway.user>
-        <flyway.password>${postgresql.password}</flyway.password>
-        <flyway-core.version>2.2.1</flyway-core.version>
         <docker-maven-plugin.version>0.26.1</docker-maven-plugin.version>
     </properties>
 
@@ -82,32 +72,14 @@
         <!--</dependency>-->
 
         <dependency>
-            <groupId>com.googlecode.flyway</groupId>
+            <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
-            <version>${flyway-core.version}</version>
         </dependency>
 
     </dependencies>
 
     <build>
         <plugins>
-
-            <plugin>
-                <groupId>com.googlecode.flyway</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>${flyway-core.version}</version>
-                <configuration>
-                    <url>${flyway.url}</url>
-                    <user>${flyway.user}</user>
-                    <password>${flyway.password}</password>
-                    <encoding>${project.encoding}</encoding>
-                    <locations>
-                        <location>filesystem:${basedir}/db/migration</location>
-                    </locations>
-                    <schemas>backend</schemas>
-                </configuration>
-            </plugin>
-
 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
